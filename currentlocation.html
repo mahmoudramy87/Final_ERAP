@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+	<head>
+    <title>Geolocation</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYk_lzLGnEmCTxrrYEE1oC6gmPptBKyBQ">
+		</script>
+		
+		
+<script>
+var map;
+function initialize() {
+  var mapOptions = {
+	zoom: 14
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+	  mapOptions);
+	
+	// El Zohour Hospital marker
+		var contentString1 = 
+			'<h1> <b>El Zohour Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address: Sidi Beshr Qebli, Qesm Al Montazah, Alexandria, Egypt</li>'+
+						'<li> Phone Number: 03-5252201 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoZohour = new google.maps.InfoWindow({
+			content: contentString1
+		});	
+		var hZohour = new google.maps.LatLng(31.254167,29.995139);
+		var marker1 = new google.maps.Marker({
+			position: hZohour,
+			map: map,
+			title:"El Zohour Hospital"
+		});
+		google.maps.event.addListener(marker1, 'click', function() {
+			infoZohour.open(map,marker1);
+		});
+		
+// El Salam Hospital marker
+		var contentString2 = 
+			'<h1> <b>El Salam Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address: Bab Sharqi WA Wabour Al Meyah, Qesm Bab Sharqi, Alexandria, Egypt</li>'+
+						'<li> Phone Number: 03-4871948 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoSalam = new google.maps.InfoWindow({
+			content: contentString2
+		});	
+		
+		var hSalam = new google.maps.LatLng(31.201937,29.910061);
+		var marker2 = new google.maps.Marker({
+			position: hSalam,
+			map: map,
+			title:"El Salam Hospital"
+		});
+		google.maps.event.addListener(marker2, 'click', function() {
+			infoSalam.open(map,marker2);
+		});
+	
+// El Madina El Tebbeya Hospital
+		var contentString3 = 
+			'<h1> <b>El Madina El Tebbeya Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address: Mustafa Kamel WA Bolkli, Qesm Sidi Gaber, Alexandria, Egypt</li>'+
+						'<li> Phone Number: 03-5433505 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoMadinaTebbeya = new google.maps.InfoWindow({
+			content: contentString3
+		});	
+		
+		var hMadinaTebbeya = new google.maps.LatLng(31.224639,29.945977);
+		var marker3 = new google.maps.Marker({
+			position: hMadinaTebbeya,
+			map: map,
+			title:"El Madina El Tebbeya Hospital"
+		});
+		google.maps.event.addListener(marker3, 'click', function() {
+			infoMadinaTebbeya.open(map,marker3);
+		});
+	// Faculty of Medicine Alexandria University marker
+		var contentString4 = 
+			'<h1> <b> Faculty of Medicine Alexandria University Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address: Alexandria, Al Mesallah Sharq, Qesm Al Attarin, Alexandria, Egypt</li>'+
+						'<li> Phone Number: 03-4862-920, 03-4862-929, 03-4862-928, 03-4861-129 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoFMA = new google.maps.InfoWindow({
+			content: contentString4
+		});	
+		
+		var hFacultyOfMedicineAlexandriaUniversity = new google.maps.LatLng(31.202274,29.906251);
+		var marker4 = new google.maps.Marker({
+			position: hFacultyOfMedicineAlexandriaUniversity,
+			map: map,
+			title:"Faculty of Medicine Alexandria University"
+		});
+		google.maps.event.addListener(marker4, 'click', function() {
+			infoFMA.open(map,marker4);
+		});
+	// Alex Specialized Hospital marker
+		var contentString5 = 
+			'<h1> <b>El Alex Specialized Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address: 12 ش رشدى تقاطع ش عبد الحميد العبادى, رشدى, الاسكندرية</li>'+
+						'<li> Phone Number: 03-5460130 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoAlexSpecialized = new google.maps.InfoWindow({
+			content: contentString5
+		});	
+		
+		var hAlexSpecialized = new google.maps.LatLng(31.230743,29.951032);
+		var marker5 = new google.maps.Marker({
+			position: hAlexSpecialized,
+			map: map,
+			title:"Alex Specialized Hospital"
+		});
+		google.maps.event.addListener(marker5, 'click', function() {
+			infoAlexSpecialized.open(map,marker5);
+		});
+	// Royal Hospital marker
+		var contentString6 = 
+			'<h1> <b>Royal Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address: 17 ش عبد القادر رجب متفرع من ش خليل الخياط مصطفى كامل , مصطفى كامل, الاسكندرية</li>'+
+						'<li> Phone Number: 03 5223077 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoRoyal = new google.maps.InfoWindow({
+			content: contentString6
+		});	
+		
+		var hRoyalHospital = new google.maps.LatLng(31.224215,29.949449);
+		var marker6 = new google.maps.Marker({
+			position: hRoyalHospital,
+			map: map,
+			title:"Royal Hospital"
+		});
+		google.maps.event.addListener(marker6, 'click', function() {
+			infoRoyal.open(map,marker6);
+		});
+	// Alexandria International Hospital marker
+		var contentString7 = 
+			'<h1> <b> Alexandria International Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  20 شارع محمد بهاء الدين سموحة </li>'+
+						'<li> Phone Number: 03 4207247 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoAlexInternational = new google.maps.InfoWindow({
+			content: contentString7
+		});	
+		
+		var hAlexandriaInternational = new google.maps.LatLng(31.215848,29.941805);
+		var marker7 = new google.maps.Marker({
+			position: hAlexandriaInternational,
+			map: map,
+			title:"Alexandria International Hospital"
+			});
+			google.maps.event.addListener(marker7, 'click', function() {
+			infoAlexInternational.open(map,marker7);
+		});
+	// El Shatby University Hospital marker
+		var contentString8 = 
+			'<h1> <b> El Shatby University Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  El-Gaish Rd, Al Azaritah WA Ash Shatebi, Qesm Bab Sharqi, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 4872950 </li>'+
+						'<li> Specialized: نساء و توليد </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoShatbyUniversity = new google.maps.InfoWindow({
+			content: contentString8
+		});	
+		
+		var hShatbyUniversity = new google.maps.LatLng(31.209627,29.911338);
+		var marker8 = new google.maps.Marker({
+			position: hShatbyUniversity,
+			map: map,
+			title:"El Shatby University Hospital"
+			});
+			google.maps.event.addListener(marker8, 'click', function() {
+			infoShatbyUniversity.open(map,marker8);
+		});
+	// Victoria Hospital marker
+		var contentString9 = 
+			'<h1> <b> Victoria Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Fleb Glad, Al Qasaei Qebli, Qesm AR Ramel, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 5776774 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoShatbyUniversity = new google.maps.InfoWindow({
+			content: contentString9
+		});	
+		
+		var hVictoria = new google.maps.LatLng(31.243765,29.982049);
+		var marker9 = new google.maps.Marker({
+			position: hVictoria,
+			map: map,
+			title:"Victoria Hospital"
+			});
+			google.maps.event.addListener(marker9, 'click', function() {
+			infoShatbyUniversity.open(map,marker9);
+		});
+	// Louran Hospital marker
+		var contentString10 = 
+			'<h1> <b> Louran Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  St. - Louran, 13 Shaarawy, San Stifano, Qesm AR Ramel, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 19152 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoLouran = new google.maps.InfoWindow({
+			content: contentString10
+		});	
+		
+		var hLouran = new google.maps.LatLng(31.247105,29.974056);
+		var marker10 = new google.maps.Marker({
+			position: hLouran,
+			map: map,
+			title:"Louran Hospital"
+			});
+			google.maps.event.addListener(marker10, 'click', function() {
+			infoLouran.open(map,marker10);
+		});
+	// El Thagher Specialized Hospital marker
+		var contentString11 = 
+			'<h1> <b> El Thagher Specialized Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Al Qasaei Qebli, Qesm AR Ramel, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 5770529 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoThagher = new google.maps.InfoWindow({
+			content: contentString11
+		});	
+		
+		var hThagherSpecialized = new google.maps.LatLng(31.246463,29.980096);
+		var marker11 = new google.maps.Marker({
+			position: hThagherSpecialized,
+			map: map,
+			title:"El Thagher Specialized Hospital"
+			});
+			google.maps.event.addListener(marker11, 'click', function() {
+			infoThagher.open(map,marker11);
+		});
+	// El Mowasah University Hospital marker
+		var contentString12 = 
+			'<h1> <b> El Mowasah University Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Fahmy Abdel Magid St.، EL HADARA، Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 4282888 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoMowasahUni = new google.maps.InfoWindow({
+			content: contentString12
+		});	
+		
+		var hMowasahUniversity = new google.maps.LatLng(31.203089,29.927247);
+		var marker12 = new google.maps.Marker({
+			position: hMowasahUniversity,
+			map: map,
+			title:"El Mowasah University Hospital"
+			});
+			google.maps.event.addListener(marker12, 'click', function() {
+			infoMowasahUni.open(map,marker12);
+		});
+	// The Coptic Hospital marker
+		var contentString13 = 
+			'<h1> <b> The Coptic Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Emberouz WA Moharram Beik, Qesm Moharram Beik, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 3921402 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoCoptic = new google.maps.InfoWindow({
+			content: contentString13
+		});	
+		
+		var hCoptic = new google.maps.LatLng(31.192902,29.915855);
+		var marker13 = new google.maps.Marker({
+			position: hCoptic,
+			map: map,
+			title:"The Coptic Hospital"
+			});
+			google.maps.event.addListener(marker13, 'click', function() {
+			infoCoptic.open(map,marker13);
+		});
+	// New Nozha Hospital marker
+		var contentString14 = 
+			'<h1> <b> New Nozha Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Emberouz WA Moharram Beik, Qesm Moharram Beik, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 4965111 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoNewNozha = new google.maps.InfoWindow({
+			content: contentString14
+		});	
+		
+		var hNewNozha = new google.maps.LatLng(31.195201,29.916717);
+		var marker14 = new google.maps.Marker({
+			position: hNewNozha,
+			map: map,
+			title:"New Nozha Hospital"
+			});
+			google.maps.event.addListener(marker14, 'click', function() {
+			infoNewNozha.open(map,marker14);
+		});
+	// El Gomhoreya Public Hospital marker
+		var contentString15 = 
+			'<h1> <b> El Gomhoreya Public Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Noubar, Qesm Karmouz, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 3608027 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoGP = new google.maps.InfoWindow({
+			content: contentString15
+		});	
+		
+		var hGomhoreyaPublic = new google.maps.LatLng(31.181833,29.904761);
+		var marker15 = new google.maps.Marker({
+			position: hGomhoreyaPublic,
+			map: map,
+			title:"El Gomhoreya Public Hospital"
+			});
+			google.maps.event.addListener(marker15, 'click', function() {
+			infoGP.open(map,marker15);
+		});
+	// General Alexandria Hospital marker
+		var contentString16 = 
+			'<h1> <b> General Alexandria Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Al Hadrah, Bab Sharqi WA Wabour Al Meyah, Qesm Bab Sharqi, Alexandria, Egypt </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoGeneralAlex = new google.maps.InfoWindow({
+			content: contentString16
+		});	
+		
+		var hGeneralAlxandria = new google.maps.LatLng(31.198386,29.925076);
+		var marker16 = new google.maps.Marker({
+			position: hGeneralAlxandria,
+			map: map,
+			title:"General Alxandria Hospital"
+			});
+			google.maps.event.addListener(marker16, 'click', function() {
+			infoGeneralAlex.open(map,marker16);
+		});
+	// Nariman Public Hospital marker
+		var contentString17 = 
+			'<h1> <b> Nariman Public Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Bab Sharqi WA Wabour Al Meyah, Qesm Bab Sharqi, Alexandria, Egypt </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoNarimanP = new google.maps.InfoWindow({
+			content: contentString17
+		});	
+		
+		var hNarimanPublic = new google.maps.LatLng(31.198258,29.923231);
+		var marker17 = new google.maps.Marker({
+			position: hNarimanPublic,
+			map: map,
+			title:"Nariman Public Hospital"
+			});
+			google.maps.event.addListener(marker17, 'click', function() {
+			infoNarimanP.open(map,marker17);
+		});
+	// Mabaret Alasafra Hospital marker
+		var contentString18 = 
+			'<h1> <b> Mabaret Alasafra Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Al Mandarah Bahri, Qesm Al Montazah, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 5551612 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoMabaretAsafra = new google.maps.InfoWindow({
+			content: contentString18
+		});	
+		
+		var hMabaretAlasafra = new google.maps.LatLng(31.271995,30.007007);
+		var marker18 = new google.maps.Marker({
+			position: hMabaretAlasafra,
+			map: map,
+			title:"Mabaret Alasafra Hospital"
+			});
+			google.maps.event.addListener(marker18, 'click', function() {
+			infoMabaretAsafra.open(map,marker18);
+		});
+	// Agial Hospital marker
+		var contentString19 = 
+			'<h1> <b> Agial Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Khalf Fared Lyan, Mustafa Kamel WA Bolkli, Qesm Sidi Gaber, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 5234235 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoAgial = new google.maps.InfoWindow({
+			content: contentString19
+		});	
+		
+		var hAgial = new google.maps.LatLng(31.229933,29.949165);
+		var marker19 = new google.maps.Marker({
+			position: hAgial,
+			map: map,
+			title:"Agial Hospital"
+			});
+			google.maps.event.addListener(marker19, 'click', function() {
+			infoAgial.open(map,marker19);
+		});
+	// German Hospital marker
+		var contentString20 = 
+			'<h1> <b> German Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Fleming, Qesm AR Ramel, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 5841717 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoGerman = new google.maps.InfoWindow({
+			content: contentString20
+		});	
+		
+		var hGerman = new google.maps.LatLng(31.236998,29.957664);
+		var marker20 = new google.maps.Marker({
+			position: hGerman,
+			map: map,
+			title:"German Hospital"
+			});
+			google.maps.event.addListener(marker20, 'click', function() {
+			infoGerman.open(map,marker20);
+		});	
+	// El Helal El Ahmar Hospital marker
+		var contentString21 = 
+			'<h1> <b> El Helal El Ahmar Hospital</b> </h1> </br>'+
+			'<p> <ul> 	<li> Address:  Zaarbana WA Al Hamam, Qesm AR Ramel, Alexandria, Egypt </li>'+
+						'<li> Phone Number: 03 5030230 </li>'+
+						'<li> Specialized: All Specialization </li>'+
+				'</ul>'+ 
+			'</p>';
+		var infoHelalAhmar = new google.maps.InfoWindow({
+			content: contentString21
+		});	
+		var hHelalElAhmar = new google.maps.LatLng(31.231918,29.970352);
+		var marker21 = new google.maps.Marker({
+			position: hHelalElAhmar,
+			map: map,
+			title:"El Helal El Ahmar Hospital"
+			});
+		google.maps.event.addListener(marker21, 'click', function() {
+		infoHelalAhmar.open(map,marker21);
+			});
+	
+	
+  // Try HTML5 geolocation
+  if(navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(function(position) {
+	  var pos = new google.maps.LatLng(position.coords.latitude,
+									   position.coords.longitude);
+
+	  var infowindow = new google.maps.InfoWindow({
+		map: map,
+		position: pos,
+		content: "Current User Location."
+	  });
+
+	  map.setCenter(pos);
+	}, function() {
+	  handleNoGeolocation(true);
+	});
+  } else {
+	// Browser doesn't support Geolocation
+	handleNoGeolocation(false);
+  }
+}
+
+
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+	var content = 'Error: The Geolocation service failed.';
+  } else {
+	var content = 'Error: Your browser doesn\'t support geolocation.';
+  }
+
+  var options = {
+		map: map,
+	position: new google.maps.LatLng(60, 105),
+	content: content
+};
+
+var infowindow = new google.maps.InfoWindow(options);
+map.setCenter(options.position);
+}
+
+
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js">   </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+	
+	<div id="panel">
+		<button type="button" id="proceedToRouting">Proceed to Routing</button>
+		<button type="button" id="feedback">Feedback</button>
+	</div>
+	<script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

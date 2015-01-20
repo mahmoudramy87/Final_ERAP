@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Simple Map</title>
+
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+		<meta charset="utf-8">
+
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		
+		<script type="text/javascript"
+      			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYk_lzLGnEmCTxrrYEE1oC6gmPptBKyBQ">
+    		</script>
+
+	</head>
+
+	<body>
+
+		<div id="map-canvas"></div>
+		
+		<div id="panel">
+		<b>Hospital: </b>
+		  <select id="hospital" onchange="calcRoute();">
+			  <option value="El_Zohour_Hospital">EL Zohour Hospital</option>
+			  <option value="El_Salam_Hospital">El Salam Hospital</option>
+			  <option value="El_Madina_El_Tebbeya_Hospital">El Madina El Tebbeya Hospital</option>
+			  <option value="Faculty_of_Medicine_Alexandria_University">Faculty of Medicine Alexandria University</option>
+			  <option value="Alex_Specialized_Hospital">Alex Specialized Hospital</option>
+			  <option value="Royal_Hospital">Royal Hospital</option>
+			  <option value="Alexandria_International_Hospital">Alexandria International Hospital</option>
+			  <option value="El_Shatby_University">El Shatby University Hospital</option>
+			  <option value="Victoria_Hospital">Victoria Hospital</option>
+			  <option value="Louran_Hospital">Louran Hospital</option>
+			  <option value="El_Thagher_Specialized_Hospital">El Thagher Specialized Hospital</option>
+			  <option value="El_Mowasah_University_Hospital">El Mowasah University Hospital</option>
+			  <option value="The_Coptic_Hospital">The Coptic Hospital</option>
+			  <option value="New_Nozha_Hospital">New Nozha Hospital</option>
+			  <option value="El_Gomhoreya_Public_Hospital">El Gomhoreya Public Hospital</option>
+			  <option value="General_Alexandria_Hospital">General Alexandria Hospital</option>
+			  <option value="Nariman_Public_Hospital">Nariman Public Hospital</option>
+			  <option value="Mabaret_Alasafra_Hospital">Mabaret Alasafra Hospital</option>
+			  <option value="Agial_Hospital">Agial Hospital</option>
+			  <option value="German_Hospital">German Hospital</option>
+			  <option value="El_Helal_El_Ahmar_Hospital">El Helal El Ahmar Hospital</option>
+			</select>
+			
+		</div>
+
+		<script type="text/javascript" src="js/map.js"></script>
+	</body>
+
+</html>
